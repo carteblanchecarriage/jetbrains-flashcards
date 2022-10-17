@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #222;
+    overflow: clip;
+}
+
+body {
+    background-image: linear-gradient(0, #bbffb3, #b3fff4);
+    background-repeat: no-repeat;
+}
+
+#quizArea {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1em;
+    margin: 20px 20%;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.cardContainer {
+    perspective: 1000px;
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    margin: 50px;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.front {
+    background-color: white;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.back {
+    color: white;
+    background-color: #222;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.cardContainer:hover .card {
+    transform: rotateY(180deg);
+}
