@@ -71,3 +71,7 @@ h1 {
 .cardContainer:hover .card {
     transform: rotateY(180deg);
 }
+
+p {
+    text-align: center;
+}
